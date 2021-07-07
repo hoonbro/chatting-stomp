@@ -13,7 +13,7 @@ public class MainController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@RequestMapping("/chat")
-	public ModelAndView chat() {
+	public ModelAndView	chat() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("chat");
 		return mv;
