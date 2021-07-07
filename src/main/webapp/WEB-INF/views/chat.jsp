@@ -87,6 +87,7 @@ function chatName(){
 		wsOpen();
 		$("#yourName").hide();
 		$("#yourMsg").show();
+		$("#userId").text(userName);
 	}
 }
 
@@ -104,18 +105,18 @@ function send() {
 		</div>
 		
 		<div id="yourName">
-			<table class="inputTable">
+			<table class="inputTable" style = "width:500px">
 				<tr>
-					<th>사용자명</th>
+					<th style = "width:80px">사용자명</th>
 					<th><input type="text" name="userName" id="userName"></th>
-					<th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
+					<th style = "width:100px"><button onclick="chatName()" id="startBtn">이름 등록</button></th>
 				</tr>
 			</table>
 		</div>
 		<div id="yourMsg">
 			<table class="inputTable">
 				<tr>
-					<th>메시지</th>
+					<th id = "userId"></th>
 					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
 					<th><button onclick="send()" id="sendBtn">보내기</button></th>
 				</tr>
