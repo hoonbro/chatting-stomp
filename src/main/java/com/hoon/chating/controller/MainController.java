@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MainController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@RequestMapping("/chat")
+	@RequestMapping()
 	public ModelAndView	chat() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("chat");
