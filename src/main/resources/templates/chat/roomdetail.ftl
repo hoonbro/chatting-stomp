@@ -51,7 +51,7 @@
     //alert(document.title);
     // websocket &amp; stomp initialize
     var sock = new SockJS("/ws-stomp");
-    var ws = Stomp.over(sock);
+    var ws = Stomp.over(sock); //stomp를 초기화하기 위해 over를 이용해 sockJS의 정보를 기반으로 설정
     var reconnect = 0;
     // vue.js
     var vm = new Vue({
