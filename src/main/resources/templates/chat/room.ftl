@@ -77,12 +77,8 @@
                 }
             },
             enterRoom: function(roomId) {
-                var sender = prompt('닉네임을 입력해 주세요.');
-                if(sender != "") {
-                    localStorage.setItem('wschat.sender',sender);
                     localStorage.setItem('wschat.roomId',roomId);
                     location.href="/chat/room/enter/"+roomId;
-                }
             }
         }
     });
