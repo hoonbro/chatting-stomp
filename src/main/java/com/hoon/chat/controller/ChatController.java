@@ -1,7 +1,7 @@
 package com.hoon.chat.controller;
 
 import com.hoon.chat.dto.ChatMessage;
-import com.hoon.chat.repo.ChatRoomRepository;
+import com.hoon.chat.repo.ChatRoomRepoImpl;
 import com.hoon.chat.service.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.Header;
@@ -17,7 +17,7 @@ public class ChatController {
 
     private final JwtTokenProvider jwtTokenProvider;
 
-    private final ChatRoomRepository chatRoomRepository;
+    private final ChatRoomRepoImpl chatRoomRepository;
 
     @MessageMapping("/chat/message")
     public void message(ChatMessage message, @Header("token") String token) {

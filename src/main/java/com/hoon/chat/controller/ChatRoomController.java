@@ -2,6 +2,7 @@ package com.hoon.chat.controller;
 
 import com.hoon.chat.dto.ChatRoom;
 import com.hoon.chat.dto.UserDto;
+import com.hoon.chat.service.ChatRoomService;
 import com.hoon.chat.service.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -10,14 +11,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/chat")
 public class ChatRoomController {
-    private final com.hoon.chat.repo.ChatRoomRepository chatRoomRepository;
+    private final com.hoon.chat.repo.ChatRoomRepoImpl chatRoomRepository;
     private final JwtTokenProvider jwtTokenProvider;
+    private final ChatRoomService chatRoomService;
 
     //채팅 리스트 화면
     @GetMapping("/room")
@@ -29,14 +33,24 @@ public class ChatRoomController {
     @GetMapping("/rooms")
     @ResponseBody
     public List<ChatRoom> room() {
-        return chatRoomRepository.findAllRoom();
+        try {
+            return chatRoomService.findAllRoom();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
     }
 
     //채팅방 생성
     @PostMapping("/room")
     @ResponseBody
     public ChatRoom createRoom(@RequestParam String name) {
-        return chatRoomRepository.createChatRoom(name);
+        try {
+            return chatRoomService.createChatRoom(name);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
     }
 
     @GetMapping("/room/enter/{roomId}")
@@ -49,7 +63,12 @@ public class ChatRoomController {
     @GetMapping("/room/{roomId}")
     @ResponseBody
     public ChatRoom roomInfo(@PathVariable String roomId) {
-        return chatRoomRepository.findRoomById(roomId);
+        try {
+            return chatRoomService.findRoomById(roomId);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return null;
+        }
     }
 
     @GetMapping("/user")
