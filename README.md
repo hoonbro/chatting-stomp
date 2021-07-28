@@ -6,7 +6,7 @@
 
 ## WebSocket을 사용하는 이유
 ### HTTP통신
-![image](https://user-images.githubusercontent.com/66583397/124771147-df923200-df75-11eb-97e8-ba78ee8b252c.png)
+![image](https://user-images.githubusercontent.com/66583397/124771147-df923200-df75-11eb-97e8-ba78ee8b252c.png) 
 
 - <b>모든 HTTP를 사용한 통신은 클라이언트가 먼저 요청을 보내고, 그 요청에 따라 웹 서버가 응답하는 형태이며 웹 서버는 응답을 보낸 후 웹 브라우저와의 연결을 끊는다.</b> 양쪽이 데이터를 동시에 보내는 것이 아니기 때문에 이러한 통신 방식을 반이중 통신(Half Duplex)라고 한다.
 
