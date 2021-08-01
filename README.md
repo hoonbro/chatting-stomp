@@ -53,6 +53,9 @@
 ### 웹소켓 열기 HandShake
 > 웹소켓 열기 핸드셰이크는 클라이언트가 먼저 핸드셰이크 요청을 보내고 이에 대한 응답을 서버가 클라이언트로 보내는 구조이다. 서버와 클라이언트는 HTTP 1.1 프로토콜을 사용하여 요청과 응답을 보낸다. 다음은 Request와 Response의 예시이다.
 
+## STOMP란?
+- simple text oriented messaging protocol의 약자이며, 텍스트 기반의 프로토콜이다. websocket은 연결된 socket에게 data처리를 직접 다하는 반면, stomp는 subscriber, sender, broker를 따로 두어 처리를 하게 된다.
+
 
 [출처] https://dev-gorany.tistory.com/212  
 [출처] https://javaengine.tistory.com/entry/Spring-websocket-chatting-server2-%E2%80%93-Stomp%EB%A1%9C-%EC%B1%84%ED%8C%85%EC%84%9C%EB%B2%84-%EA%B3%A0%EB%8F%84%ED%99%94%ED%95%98%EA%B8%B0?category=755679
